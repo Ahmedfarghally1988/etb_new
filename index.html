@@ -322,9 +322,9 @@
               <rect y="9" width="1" height="20" fill="#D9D9D9" fill-opacity="0.7"></rect>
             </svg>
             <div class="logo d-none d-sm-block">
-              <a href="#" class="vs-btn style10">
+              <button class="vs-btn style10" data-bs-toggle="modal" data-bs-target="#exampleModalInquire">
                 <span> <i class="fa-solid fa-suitcase fa-shake me-1"></i>  Inquire </span>
-              </a>
+              </button>
             </div>
             <div class="logo d-sm-none">
               <a href="#"><img src="assets/img/logo.webp" alt="" class="logo" /></a>
@@ -576,9 +576,9 @@
                     <rect x="5" width="1" height="39" fill="#D9D9D9" fill-opacity="0.7" />
                     <rect y="9" width="1" height="20" fill="#D9D9D9" fill-opacity="0.7" />
                   </svg>
-                  <a href="blog-details.html" class="vs-btn style8">
+                  <button class="vs-btn style8" data-bs-toggle="modal" data-bs-target="#exampleModalInquire">
                     <span> <i class="fa-solid fa-suitcase fa-shake me-1"></i>  Inquire </span>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1809,11 +1809,70 @@
     <div class="modal-dialog bg-white">
       <div class="modal-content">
         <div class="modal-body">
-<!--          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SJuJxP5Ua0E?si=VK6keZPnnbxVeUJ6&amp;controls=0&amp;start=11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SJuJxP5Ua0E?si=VK6keZPnnbxVeUJ6&amp;controls=0&amp;start=11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg" id="exampleModalInquire" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog bg-white" style="border-radius: 15px !important;">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="destination-request inquire-form tab-content">
+            <div class="row">
+              <div class="col-12">
+                <form action="#" method="post" class="form-style2">
+                  <div class="row">
+                    <div class="col-12 form-group">
+                      <input id="name" name="name" type="text" class="form-control" placeholder="Enter Your Name *" required="" autocomplete="off">
+                    </div>
+                    <div class="col-12 form-group">
+                      <input id="email" name="email" type="email" class="form-control" placeholder="Enter Your Email *" required="">
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <select id="country" name="country" class="form-control" required="">
+                        <option value="" disabled="" selected="">
+                          Select Your Country *
+                        </option>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                        <option value="UK">UK</option>
+                        <!-- Add more countries as needed -->
+                      </select>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input id="phone" name="phone" type="tel" class="form-control" placeholder="Enter Your Number *" required="">
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input id="adult" name="adult" type="number" class="form-control" placeholder="Enter Number Of Adult *" required="">
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input id="children" name="children" type="number" class="form-control" placeholder="Enter Number Of Children *" required="">
+                    </div>
+                    <div class="col-12 form-group">
+                      <input id="date" name="subject" type="date" class="form-control" placeholder="Enter Enquiry Subject *" required="">
+                    </div>
+                    <div class="col-12 form-group">
+                      <textarea id="message" name="message" class="form-control" placeholder="Enter Your Message *" required=""></textarea>
+                    </div>
+                    <div class="col-12 form-group mb-0">
+                      <button class="vs-btn" type="submit">
+                        Send Request
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 <a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
 
 

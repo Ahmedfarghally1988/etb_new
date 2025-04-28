@@ -1518,6 +1518,15 @@ if (
   //   e.preventDefault();
   // }, false);
 
+  $(".show-more-pra").click(function () {
+    if($(".text").hasClass("show-more-height")) {
+      $(this).text("Show Less");
+    } else {
+      $(this).text("Show More");
+    }
+
+    $(".text").toggleClass("show-more-height");
+  });
 
   /*----------- 00. Inspect Element Disable ----------*/
   document.onkeydown = function (e) {
