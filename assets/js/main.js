@@ -324,30 +324,6 @@
   elements.forEach((element) => observer.observe(element));
 
   /**************************************
-   ***** 05. Data Navbar Stick *****
-   **************************************/
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#navbars",
-      start: "top+=300", // Trigger animation when scrolled 200px down
-      end: "+=1",
-      toggleActions: "play none none none",
-      scrub: 1,
-      duration: 0.2, // Duration of the animation
-    },
-  });
-  // Initially hide the element
-  gsap.set("#navbars", { opacity: 0, visibility: "hidden", y: -100 });
-  // Animate to make it visible and slide down smoothly
-  tl.to("#navbars", {
-    opacity: 1,
-    visibility: "visible",
-    y: 0, // Slide down to its original position
-    duration: 0.2, // Duration of the animation
-    ease: "power2.out", // Smooth easing effect
-  });
-
-  /**************************************
    ***** 06. Reveal Image Animation *****
    **************************************/
   if ($(".reveal").length) {
@@ -1095,8 +1071,7 @@
         tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
         titleSrc: function (item) {
           return (
-            item.el.attr("title") +
-            ` <a href="https://is.gd/a33FWT" target="_blank" style="color: #f7921f;" rel="noopener noreferrer">&nbsp;Click Here</a>`
+            item.el.attr("title")
           );
         },
       },
@@ -1520,13 +1495,23 @@ if (
 
   $(".show-more-pra").click(function () {
     if($(".text").hasClass("show-more-height")) {
-      $(this).text("Show Less");
+      $(this).text("Read Less");
     } else {
-      $(this).text("Show More");
+      $(this).text("Read  More");
     }
-
     $(".text").toggleClass("show-more-height");
   });
+
+
+$(".show-more").click(function () {
+  if($(".text").hasClass("show-more-height")) {
+    $(this).text("Less More");
+  } else {
+    $(this).text("Reed More");
+  }
+
+  $(".text").toggleClass("show-more-height");
+});
 
   /*----------- 00. Inspect Element Disable ----------*/
   document.onkeydown = function (e) {
