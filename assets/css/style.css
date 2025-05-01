@@ -43,8 +43,8 @@
   --bg-color-13: #d80808;
   --bg-color-13-rgb: 217, 8, 8;
   --vs-border-color: #e0e0e0;
-  --title-font: "Abril Fatface", serif;
-  --body-font: "Rubik", serif;
+  --title-font: "Noto Serif Georgian", serif;
+  --body-font: "Noto Serif Georgian";
   --bricolage-font: "Bricolage Grotesque", serif;
   --poppins-font: "Poppins", serif;
   --icon-font: "Font Awesome 6 Pro";
@@ -3951,7 +3951,7 @@ a.text-theme:hover,
 .main-menu a {
   display: block;
   position: relative;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--title-color);
   letter-spacing: 0.1px;
 }
