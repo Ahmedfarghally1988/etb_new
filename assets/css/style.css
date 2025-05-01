@@ -1600,7 +1600,7 @@ textarea.is-invalid {
   border: none;
   text-transform: uppercase;
   text-align: center;
-  background-color: var(--second-theme-color);
+  background-color: var(--theme-color);
   color: var(--white-color);
   font-family: var(--body-font);
   font-size: 15px;
@@ -1622,7 +1622,7 @@ textarea.is-invalid {
   position: absolute;
   top: 0%;
   left: 0%;
-  background: var(--theme-color);
+  background: var(--second-theme-color);
   transition: all ease 0.5s;
   z-index: -1;
   border-radius: inherit;
@@ -1695,7 +1695,7 @@ textarea.is-invalid {
 }
 .vs-btn.style8 {
   border-radius: 4px;
-  background: var(--second-theme-color);
+  background: var(--theme-color);
   padding: 19.5px 35px;
 }
 @media (max-width: 991px) {
@@ -3171,6 +3171,8 @@ a.text-theme:hover,
   background: rgba(217, 217, 217, 0.2);
   backdrop-filter: blur(2px);
   padding: 10px 10px;
+  position: absolute;
+  bottom: 15%;
 }
 .search-box form {
   border-radius: 20px;
@@ -5714,7 +5716,7 @@ ul.mega-menu li a:before {
   top: 0;
   left: 0;
   right: 0;
-  background: rgb(0 0 0 / 50%);
+  /*background: rgb(0 0 0 / 50%);*/
 }
 @media (min-width: 1200px) {
   .hero-layout1 {
@@ -6514,8 +6516,8 @@ ul.mega-menu li a:before {
 }
 .vs-destination-single .destination-single-px {
   padding-inline: 44px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 @media (max-width: 991px) {
   .vs-destination-single .destination-single-px {
