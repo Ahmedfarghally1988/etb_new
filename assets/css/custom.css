@@ -425,10 +425,6 @@
     border: 1px solid #ddd;
 }
 
-.footer-widgets .logo img{
-    filter: brightness(0.5);
-}
-
 .banner_bin{
     display: none;
 }
@@ -667,4 +663,25 @@ div.accordion-button:after{
         height: 150px;
     }
     /* Error Page */
+}
+
+.btn-number{
+    background: var(--theme-color);
+}
+.btn-number:hover{
+    background: var(--second-theme-color);
+}
+.btn-number-add{
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    padding: 0 10px;
+}
+
+.btn-number-mins{
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    padding: 0 10px;
+}
+.iti__country-list {
+    z-index: 9999 !important;
 }

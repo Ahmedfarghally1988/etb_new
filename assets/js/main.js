@@ -1153,6 +1153,7 @@
       slidesPerView: 1,
       spaceBetween: 30,
       slidesPerGroup: 1,
+      autoplay:true,
       loop: true,
       speed: 1000,
       navigation: {
@@ -1227,7 +1228,6 @@
     });
   }
 
-  $("#select-division").selectmenu();
   $("#guest-dropdown").selectmenu();
 
   $(function () {
@@ -1532,50 +1532,103 @@ $(".show-more").click(function () {
     }
   }
 
-  /*------------- Page 404 -------------*/
-  function randomNum()
-  {
-    "use strict";
-    return Math.floor(Math.random() * 9)+1;
+
+  /*---------- phone number -------------*/
+  function getIp(callback) {
+    fetch('ipinfo.io/140.82.183.34?token=66e2f39b20a2bd', { headers: { 'Accept': 'application/json' }})
+        .then((resp) => resp.json())
+        .catch(() => {
+          return {
+            country: 'us',
+          };
+        })
+        .then((resp) => callback(resp.country));
   }
-  var loop1,loop2,loop3,time=30, i=0, number, selector3 = document.querySelector('.thirdDigit'), selector2 = document.querySelector('.secondDigit'),
-      selector1 = document.querySelector('.firstDigit');
-  loop3 = setInterval(function()
-  {
-    "use strict";
-    if(i > 40)
-    {
-      clearInterval(loop3);
-      selector3.textContent = 4;
-    }else
-    {
-      selector3.textContent = randomNum();
-      i++;
+
+  const phoneInputField = document.querySelector("#phone");
+  const phoneInput = window.intlTelInput(phoneInputField, {
+    utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
+
+  const info = document.querySelector(".alert-info");
+
+  function process(event) {
+    event.preventDefault();
+
+    const phoneNumber = phoneInput.getNumber();
+  }
+
+
+  /*-------- input Nuber ---------*/
+$('.btn-number').click(function(e){
+  e.preventDefault();
+
+  fieldName = $(this).attr('data-field');
+  type      = $(this).attr('data-type');
+  var input = $("input[name='"+fieldName+"']");
+  var currentVal = parseInt(input.val());
+  if (!isNaN(currentVal)) {
+    if(type == 'minus') {
+
+      if(currentVal > input.attr('min')) {
+        input.val(currentVal - 1).change();
+      }
+      if(parseInt(input.val()) == input.attr('min')) {
+        $(this).attr('disabled', true);
+      }
+
+    } else if(type == 'plus') {
+
+      if(currentVal < input.attr('max')) {
+        input.val(currentVal + 1).change();
+      }
+      if(parseInt(input.val()) == input.attr('max')) {
+        $(this).attr('disabled', true);
+      }
+
     }
-  }, time);
-  loop2 = setInterval(function()
-  {
-    "use strict";
-    if(i > 80)
-    {
-      clearInterval(loop2);
-      selector2.textContent = 0;
-    }else
-    {
-      selector2.textContent = randomNum();
-      i++;
-    }
-  }, time);
-  loop1 = setInterval(function()
-  {
-    "use strict";
-    if(i > 100)
-    {
-      clearInterval(loop1);
-      selector1.textContent = 4;
-    }else
-    {
-      selector1.textContent = randomNum();
-      i++;
-    }
-  }, time);
+  } else {
+    input.val(0);
+  }
+});
+$('.input-number').focusin(function(){
+  $(this).data('oldValue', $(this).val());
+});
+$('.input-number').change(function() {
+
+  minValue =  parseInt($(this).attr('min'));
+  maxValue =  parseInt($(this).attr('max'));
+  valueCurrent = parseInt($(this).val());
+
+  name = $(this).attr('name');
+  if(valueCurrent >= minValue) {
+    $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+  } else {
+    alert('Sorry, the minimum value was reached');
+    $(this).val($(this).data('oldValue'));
+  }
+  if(valueCurrent <= maxValue) {
+    $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+  } else {
+    alert('Sorry, the maximum value was reached');
+    $(this).val($(this).data('oldValue'));
+  }
+
+
+});
+$(".input-number").keydown(function (e) {
+  // Allow: backspace, delete, tab, escape, enter and .
+  if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+      // Allow: Ctrl+A
+      (e.keyCode == 65 && e.ctrlKey === true) ||
+      // Allow: home, end, left, right
+      (e.keyCode >= 35 && e.keyCode <= 39)) {
+    // let it happen, don't do anything
+    return;
+  }
+  // Ensure that it is a number and stop the keypress
+  if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+    e.preventDefault();
+  }
+});

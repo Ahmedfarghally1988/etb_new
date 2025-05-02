@@ -14,12 +14,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.png" />
 
-  <!--  <link rel="preconnect" href="https://fonts.googleapis.com/" />-->
-  <!--  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />-->
-  <!--  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&amp;family=Bricolage+Grotesque:opsz,wght@12..96,200..800&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Rubik:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet" />-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 
 
   <link rel="stylesheet" href="assets/css/plugins.css" />
@@ -608,23 +606,25 @@
       </div>
     </section>
 
+
+
     <footer class="vs-footer-style1 bg-theme-color">
-      <div class="footer-center pt-5">
+      <div class="footer-center pt-4">
         <div class="container">
           <div class="row gx-4 gy-4 gx-xl-2 justify-content-between">
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="footer-widgets">
                 <a href="#" class="logo">
-                  <img src="assets/img/logo.webp" width="150" alt="logo" />
+                  <img src="assets/img/logo_white.png" width="150" alt="logo" />
                 </a>
                 <p class="mt-4 mb-3 text-color-5">
                   ETB Tours Egypt is a leading tourism company in Egypt which is specialist in Egypt tours, Egypt travel packages, Egypt Nile Cruises, Cairo day tours, Egypt Classic tour packages.
                 </p>
                 <div class="newsletter">
-                  <form action="#" class="w100">
+                  <form action="#" class="w100 d-flex gap-3">
                     <input type="email" class="form-control" placeholder="Enter Email Address" />
                     <button type="submit" class="text-uppercase text-black vs-btn style10 py-2 bg-white">
-                      <span>Subscribe</span>
+                      <span><i class="fa fa-envelope"></i></span>
                     </button>
                   </form>
                 </div>
@@ -768,7 +768,7 @@
             <div class="col-md-6 order-2 order-md-1 mt-2">
               <p class="footer-copyright text-center text-md-start">
                 <span class="current-year"></span>
-                <a href="index.html" title="" class="text-black"> ETB Tours </a>Copyright © 2025 . All Rights Reserved </p>
+                Copyright © All Rights Reserved  2025 <a href="index.html" title="" class="text-black"> ETB Tours </a> </p>
             </div>
             <div class="col-md-6 order-1 order-md-2">
               <div class="footer-menu">
@@ -793,28 +793,133 @@
     <div class="modal-dialog bg-white">
       <div class="modal-content">
         <div class="modal-body">
-<!--          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SJuJxP5Ua0E?si=VK6keZPnnbxVeUJ6&amp;controls=0&amp;start=11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SJuJxP5Ua0E?si=VK6keZPnnbxVeUJ6&amp;controls=0&amp;start=11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </div>
-<a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
+
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg" id="exampleModalInquire" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog bg-white" style="border-radius: 15px !important;">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="destination-request inquire-form tab-content">
+            <div class="row">
+              <div class="col-12">
+                <form action="#" method="post" class="form-style2">
+                  <div class="row">
+                    <div class="col-12 form-group">
+                      <input id="name" name="name" type="text" class="form-control" placeholder="Enter Your Name *" required="" autocomplete="off">
+                    </div>
+                    <div class="col-12 form-group">
+                      <input id="email" name="email" type="email" class="form-control" placeholder="Enter Your Email *" required="">
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <select id="country" name="country" class="form-control" required="">
+                        <option value="" disabled="" selected="">
+                          Select Your Country *
+                        </option>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                        <option value="UK">UK</option>
+                        <!-- Add more countries as needed -->
+                      </select>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input id="phone" type="tel" name="phone" class="form-control" placeholder="Enter Your Number *" required=""/>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label class="fs-6 mt-2"> No Of Adult </label>
+                      <div class="input-group">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-danger btn-number btn-number-add"  data-type="minus" data-field="quant[2]">
+                              <span class="fa fa-minus"></span>
+                              </button>
+                          </span>
+                        <input type="text" name="quant[2]" class="form-control input-number" value="1" min="1" max="100">
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-success btn-number btn-number-mins" data-type="plus" data-field="quant[2]">
+                              <span class="fa fa-plus"></span>
+                          </button>
+                          </span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label class="fs-6 mt-2"> No Of Child </label>
+                      <div class="input-group">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-danger btn-number btn-number-add"  data-type="minus" data-field="quant[2]">
+                              <span class="fa fa-minus"></span>
+                              </button>
+                          </span>
+                        <input type="text" name="quant[2]" class="form-control input-number" value="4" min="1" max="100">
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-success btn-number btn-number-mins" data-type="plus" data-field="quant[2]">
+                              <span class="fa fa-plus"></span>
+                          </button>
+                          </span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                      <label class="fs-6 mt-2"> No Of Child </label>
+                      <div class="row">
+                        <div class="col-md-3">
+                          <input name="no-child" type="text" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                          <input name="no-child" type="text" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                          <input name="no-child" type="text" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                          <input name="no-child" type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 form-group">
+                      <label class="fs-6 mt-2"> Select Date </label>
+                      <input id="date" name="date" type="date" class="form-control" placeholder="Enter Enquiry Subject *" required="">
+                    </div>
+                    <div class="col-12 form-group">
+                      <textarea id="message" name="message" class="form-control" placeholder="Enter Your Message *" required=""></textarea>
+                    </div>
+                    <div class="col-12 form-group mb-0">
+                      <button class="vs-btn" type="submit">
+                        Send Request
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-<script src="assets/js/jquery-ui.min.js"></script>
-<script src="assets/js/moment.min.js"></script>
-<script src="assets/js/daterangepicker.min.js"></script>
-<script src="assets/js/swiper-bundle.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-<script src="assets/js/gsap.min.js"></script>
-<script src="assets/js/ScrollTrigger.min.js"></script>
-<script src="assets/js/ScrollToPlugin.min.js"></script>
-<script src="assets/js/SplitText.min.js"></script>
-<!-- Main Js File -->
-<script src="assets/js/main.js"></script>
+  <a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
+
+
+  <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/jquery-ui.min.js"></script>
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/daterangepicker.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+  <script src="assets/js/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/SplitText.min.js"></script>
+  <script src="assets/js/intlTelInput.min.js"></script>
+
+  <!-- Main Js File -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

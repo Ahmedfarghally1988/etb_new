@@ -14,12 +14,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.png" />
 
-<!--  <link rel="preconnect" href="https://fonts.googleapis.com/" />-->
-<!--  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />-->
-<!--  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&amp;family=Bricolage+Grotesque:opsz,wght@12..96,200..800&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Rubik:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet" />-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 
 
   <link rel="stylesheet" href="assets/css/plugins.css" />
@@ -423,19 +421,19 @@
 
     <!--------- Slider Home --------->
     <section class="z-index-common hero-layout1 style2 overflow-clip background-image"  data-bg-src="assets/img/main_banner.webp">
-        <div class="container-fluid p-xl-0">
+        <div class="container">
           <div class="row justify-content-center">
-            <div class="col-xl-10 col-xxl-7">
+            <div class="col-md-12">
               <div class="hero-content text-center">
                 <div class="search-box fade-anim" data-delay="0.77" data-direction="top">
                   <form action="#" class="align-items-center">
-                    <!-- Destination Field -->
+
                     <div class="form-group ps-0">
-                      <label for="select-division" class="form-label d-flex align-items-center">
+                      <label  class="form-label d-flex align-items-center">
                         <i class="fa-sharp fa-light fa-location-dot me-2"></i>
                         Destinations
                       </label>
-                      <select id="select-division" name="division" class="form-select" required>
+                      <select name="division" class="form-select" required>
                         <option value="" disabled selected hidden>
                           Select Division
                         </option>
@@ -449,25 +447,23 @@
                         <option value="Sylhet">Sylhet</option>
                       </select>
                     </div>
-                    <!-- Date Field -->
-                    <div class="form-group">
-                      <label for="search-date" class="form-label d-flex align-items-center">
-                        <i class="fa-regular fa-calendar-days me-2"></i>
-                        Date
+
+                    <div class="form-group ps-3">
+                      <label  class="form-label d-flex align-items-center">
+                        <i class="fa-sharp fa-light fa-location-dot me-2"></i>
+                        duration
                       </label>
-                      <input type="text" id="search-date" name="searchDate" class="form-select" placeholder="Date from" readonly />
-                    </div>
-                    <!-- Guest Field -->
-                    <div class="form-group">
-                      <label for="guest-dropdown" class="form-label d-flex align-items-center"> <i class="fa-regular fa-user-hoodie me-2"></i> Guest </label>
-                      <select id="guest-dropdown" name="guest" class="form-select">
-                        <option value="1">1 Guest</option>
-                        <option value="2">2 Guests</option>
-                        <option value="3">3 Guests</option>
-                        <option value="4">4 Guests</option>
-                        <option value="5">5 Guests</option>
+                      <select  name="division" class="form-select" required>
+                        <option value="" disabled selected hidden>
+                          Select duration
+                        </option>
+                        <option value="">Day 1</option>
+                        <option value="">Day 2</option>
+                        <option value="">Day 3</option>
                       </select>
                     </div>
+
+
                     <!-- Submit Button -->
                     <div class="form-group pe-0">
                       <button type="submit" class="vs-btn style4 w-100">
@@ -574,20 +570,21 @@
               </h6>
               <div class="info-area">
                 <div class="review-box bg-third-theme-color text-center btn-bounce btn-trigger">
+
                   <figure class="d-block">
-                    <img src="assets/img/icons/owl.png" alt="owl" />
+                    <img src="assets/img/8.jpg" alt="owl" />
                   </figure>
-                  <ul class="custom-ul stars">
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                  </ul>
-                  <p class="review-info text-white-color ff-poppins">
-                    3k happy review
-                  </p>
-                  <a href="#" class="write-review d-block text-capitalize">write a review</a>
+<!--                  <ul class="custom-ul stars">-->
+<!--                    <li><i class="fas fa-star"></i></li>-->
+<!--                    <li><i class="fas fa-star"></i></li>-->
+<!--                    <li><i class="fas fa-star"></i></li>-->
+<!--                    <li><i class="fas fa-star"></i></li>-->
+<!--                    <li><i class="fas fa-star"></i></li>-->
+<!--                  </ul>-->
+<!--                  <p class="review-info text-white-color ff-poppins">-->
+<!--                    3k happy review-->
+<!--                  </p>-->
+<!--                  <a href="#" class="write-review d-block text-capitalize">write a review</a>-->
                 </div>
 
                 <div class="info-list">
@@ -1104,7 +1101,6 @@
           </div>
       </div>
 
-
     <!--================= Tour Package Area start =================-->
     <section class="vs-tour-package style-3 space py-4">
           <img src="assets/img/icons/rope-clamps.png" alt="icon" class="swing tour-package-icon-1" />
@@ -1285,6 +1281,7 @@
           </div>
       </section>
 
+
     <!--================= Blog Area start ================-->
     <section class="blog-style2 space py-5">
       <div class="container">
@@ -1374,7 +1371,6 @@
       </div>
     </section>
 
-
     <!--================= Blog Area start =================-->
     <section class="blog-style1 space-top space-extra-bottom py-4">
       <div class="container">
@@ -1444,16 +1440,16 @@
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="footer-widgets">
                 <a href="#" class="logo">
-                  <img src="assets/img/logo.webp" width="150" alt="logo" />
+                  <img src="assets/img/logo_white.png" width="150" alt="logo" />
                 </a>
                 <p class="mt-4 mb-3 text-color-5">
                   ETB Tours Egypt is a leading tourism company in Egypt which is specialist in Egypt tours, Egypt travel packages, Egypt Nile Cruises, Cairo day tours, Egypt Classic tour packages.
                 </p>
                 <div class="newsletter">
-                  <form action="#" class="w100">
+                  <form action="#" class="w100 d-flex gap-3">
                     <input type="email" class="form-control" placeholder="Enter Email Address" />
                     <button type="submit" class="text-uppercase text-black vs-btn style10 py-2 bg-white">
-                      <span>Subscribe</span>
+                      <span><i class="fa fa-envelope"></i></span>
                     </button>
                   </form>
                 </div>
@@ -1656,16 +1652,60 @@
                       </select>
                     </div>
                     <div class="col-md-6 form-group">
-                      <input id="phone" name="phone" type="tel" class="form-control" placeholder="Enter Your Number *" required="">
+                      <input id="phone" type="tel" name="phone" class="form-control" placeholder="Enter Your Number *" required=""/>
                     </div>
                     <div class="col-md-6 form-group">
-                      <input id="adult" name="adult" type="number" class="form-control" placeholder="Enter Number Of Adult *" required="">
+                      <label class="fs-6 mt-2"> No Of Adult </label>
+                      <div class="input-group">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-danger btn-number btn-number-add"  data-type="minus" data-field="quant[3]">
+                              <span class="fa fa-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[3]" class="form-control input-number" value="1" min="1" max="100">
+                          <span class="input-group-btn">
+                          <button type="button" class="btn btn-success btn-number btn-number-mins" data-type="plus" data-field="quant[3]">
+                              <span class="fa fa-plus"></span>
+                          </button>
+                          </span>
+                      </div>
                     </div>
                     <div class="col-md-6 form-group">
-                      <input id="children" name="children" type="number" class="form-control" placeholder="Enter Number Of Children *" required="">
+                      <label class="fs-6 mt-2"> No Of Child </label>
+                      <div class="input-group">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-danger btn-number btn-number-add"  data-type="minus" data-field="quant[2]">
+                              <span class="fa fa-minus"></span>
+                              </button>
+                          </span>
+                        <input type="text" name="quant[2]" class="form-control input-number" value="4" min="1" max="100">
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-success btn-number btn-number-mins" data-type="plus" data-field="quant[2]">
+                              <span class="fa fa-plus"></span>
+                          </button>
+                          </span>
+                      </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                      <label class="fs-6 mt-2"> No Of Child </label>
+                      <div class="row">
+                          <div class="col-md-3">
+                            <input name="no-child" type="text" class="form-control">
+                          </div>
+                          <div class="col-md-3">
+                            <input name="no-child" type="text" class="form-control">
+                          </div>
+                          <div class="col-md-3">
+                            <input name="no-child" type="text" class="form-control">
+                          </div>
+                        <div class="col-md-3">
+                          <input name="no-child" type="text" class="form-control">
+                        </div>
+                      </div>
                     </div>
                     <div class="col-12 form-group">
-                      <input id="date" name="subject" type="date" class="form-control" placeholder="Enter Enquiry Subject *" required="">
+                      <label class="fs-6 mt-2"> Select Date </label>
+                      <input id="date" name="date" type="date" class="form-control" placeholder="Enter Enquiry Subject *" required="">
                     </div>
                     <div class="col-12 form-group">
                       <textarea id="message" name="message" class="form-control" placeholder="Enter Your Message *" required=""></textarea>
@@ -1702,6 +1742,8 @@
 <script src="assets/js/ScrollTrigger.min.js"></script>
 <script src="assets/js/ScrollToPlugin.min.js"></script>
 <script src="assets/js/SplitText.min.js"></script>
+<script src="assets/js/intlTelInput.min.js"></script>
+
 <!-- Main Js File -->
 <script src="assets/js/main.js"></script>
 </body>

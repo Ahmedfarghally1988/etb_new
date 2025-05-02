@@ -924,7 +924,7 @@ input {
   color: var(--body-color);
   font-size: 14px;
   font-weight: normal;
-  height: 69px;
+  height: 50px;
   padding: 0;
   transition: all 0.3s ease-in-out;
 }
@@ -3173,6 +3173,10 @@ a.text-theme:hover,
   padding: 10px 10px;
   position: absolute;
   bottom: 15%;
+  right: 0;
+  left: 0;
+  max-width: 75%;
+  margin: auto;
 }
 .search-box form {
   border-radius: 20px;
@@ -3181,7 +3185,7 @@ a.text-theme:hover,
   box-shadow: 0px 4px 4px 0px rgba(var(--black-color-rgb), 0.1);
   padding: 10px 10px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 @media (max-width: 991px) {
   .search-box form {
@@ -3595,7 +3599,6 @@ a.text-theme:hover,
 
 .tours-sidebar .widget {
   border-radius: 10px;
-  overflow: hidden;
   background: var(--white-color);
   box-shadow: 0px 4px 4px 0px rgba(var(--black-color-rgb), 0.08);
   padding: 40px 37px 40px;
@@ -4882,21 +4885,23 @@ ul.mega-menu li a:before {
   color: var(--black-color);
 }
 .newsletter button {
-  margin-top: 10px;
+  margin-top: 0;
   display: flex;
   align-items: center;
   gap: 8px;
+  border-radius: 7px !important;
   border: none;
   padding: 0;
   height: max-content;
   line-height: 1;
-  font-size: 16px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 700;
-  line-height: 256.25%;
+  line-height: 231.25%;
   letter-spacing: 0.48px;
   text-transform: uppercase;
   background-color: transparent;
+  padding: 0 25px !important;
 }
 .newsletter button i {
   color: var(--theme-color);
@@ -5421,7 +5426,7 @@ ul.mega-menu li a:before {
 .vs-blog-box2 .blog-content-footer {
   border-top: 1.5px solid rgba(var(--bg-color-3-rgb), 0.15);
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   padding: 25px 32px 32px;
 }
@@ -7378,8 +7383,9 @@ ul.mega-menu li a:before {
   width: 100%;
   height: max-content;
   border-radius: 10px;
-  padding-top: 30px;
+  padding: 20px 0;
   overflow: hidden;
+  background-color: #32e0a2;
 }
 @media (max-width: 1199px) {
   .choose-us-content .info-area .review-box {
