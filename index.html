@@ -23,6 +23,121 @@
   <link rel="stylesheet" href="assets/css/plugins.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/custom.css" />
+  
+  
+  <style>
+  .guest-dropdown .dropdown-toggle {
+        display: flex;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    align-items: center;
+    height: 60px;
+    gap: 5px;
+    padding-left: 20px;
+    background: #f5f5f5;
+}
+.guest-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 5px;
+    width: 100%;
+    background: var(--white-color);
+    /* border-radius: 10px; */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    display: none;
+    z-index: 1000;
+    border: 1px solid var(--main-color);
+    overflow: hidden;
+}
+.room-details {
+    padding: 20px 0;
+    position: relative;
+    border-bottom: 1px solid var(--main-color);
+    position: relative;
+    transition: 0.5 all ease-in-out;
+}
+.room-details .close-dropdown {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: var(--light-color);
+    color: var(--main-color);
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--main-color);
+    margin: 10px auto;
+}
+.guest-adult-option, .guest-child-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 25px 0;
+}
+.room-type label, .guest-adult-option span, .guest-child-option span {
+    font-size: 18px;    
+    font-weight: 500;
+}
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.counter button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    /* border-radius: 5px; */
+    background: #eee;
+    cursor: pointer;
+}
+.counter span.count {
+    min-width: 40px;
+    text-align: center;
+}
+.guest-child-option {
+    flex-wrap: wrap;
+}
+.guest-child-option .count {
+    width: 40px !important;
+    padding: 0 !important;
+    height: 40px !important;
+    color: var(--deep-blue) !important;
+    line-height: 40px;
+    text-align: center;
+}
+.input-content .form-group input, .input-content .form-group select {
+    padding-left: 40px;
+    width: 100% !important;
+}
+.guest-child-option~.child-input {
+    display: inline-flex;
+    margin: 10px;
+}
+.child-input label {
+    z-index: 20;
+    position: absolute;
+    top: -0.5rem;
+    font-size: 14px;
+    left: 0.5rem;
+    background: var(--white-color);
+}
+.child-input input {
+    min-width: 40px;
+    text-align: center;
+    min-width: 100px;
+    padding: 0 !important;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+  </style>
+  
 </head>
 
 <body class="vs-body">
@@ -1654,7 +1769,7 @@
                     <div class="col-md-6 form-group">
                       <input id="phone" type="tel" name="phone" class="form-control" placeholder="Enter Your Number *" required=""/>
                     </div>
-                    <div class="col-md-6 form-group">
+                    <div class="col-md-6 form-group d-none">
                       <label class="fs-6 mt-2"> No Of Adult </label>
                       <div class="input-group">
                           <span class="input-group-btn">
@@ -1670,7 +1785,7 @@
                           </span>
                       </div>
                     </div>
-                    <div class="col-md-6 form-group">
+                    <div class="col-md-6 form-group d-none">
                       <label class="fs-6 mt-2"> No Of Child </label>
                       <div class="input-group">
                           <span class="input-group-btn">
@@ -1686,7 +1801,7 @@
                           </span>
                       </div>
                     </div>
-                    <div class="col-md-12 form-group">
+                    <div class="col-md-12 form-group d-none">
                       <label class="fs-6 mt-2"> No Of Child </label>
                       <div class="row">
                           <div class="col-md-3">
@@ -1703,6 +1818,46 @@
                         </div>
                       </div>
                     </div>
+					
+					
+					<div class="col-md-12 form-group">
+					 <div class="input-content mb-20">
+					  <div class="form-group position-relative">            
+					  
+						<div class="guest-dropdown">              
+						  <div class="guest-dropdown dropdown-toggle">                               
+							<span class="guest-adult-count">1 Adults</span>
+							<span class="guest-child-count">0 Child</span>
+						  </div>			  
+						  <div class="dropdown-menu">
+							<div class="room-details" id="room-1">                  
+							  <button type="button" class="close-dropdown">Done</button>
+							  <div class="guest-adult-option">
+								<span>Adults</span>
+								<div class="counter">
+								  <button type="button" class="minus">-</button>
+								  <span class="count" data-type="adult">1</span>
+								  <button type="button" class="plus">+</button>
+								</div>
+							  </div>
+							  <div class="guest-child-option">
+								<span>Children</span>
+								<div class="counter">
+								  <button type="button" class="minus">-</button>
+								  <input class="count form-control" type="number" value="0" name="children[]" data-type="child" min="0" />
+								  <button type="button" class="plus">+</button>
+								</div>
+							  </div>
+							  <button type="button" class="close-dropdown">Done</button>
+							</div>      
+						  </div>
+						  
+						</div>
+					  </div>
+					</div>
+					</div>	
+
+					
                     <div class="col-12 form-group">
                       <label class="fs-6 mt-2"> Select Date </label>
                       <input id="date" name="date" type="date" class="form-control" placeholder="Enter Enquiry Subject *" required="">
@@ -1746,5 +1901,272 @@
 
 <!-- Main Js File -->
 <script src="assets/js/main.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Toggle dropdown menu
+      document.querySelector('.guest-dropdown.dropdown-toggle').addEventListener('click', function () {
+        const dropdownMenu = document.querySelector('.guest-dropdown .dropdown-menu');
+        dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+      });
+
+      document.querySelectorAll('.close-dropdown').forEach(function (closeBooking) {
+        closeBooking.addEventListener('click', function () {
+          const dropdownMenu = document.querySelector('.guest-dropdown .dropdown-menu');
+          dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+        })
+      });
+      // Plus buttons
+      document.querySelectorAll('.plus').forEach(function (plusButton) {
+        plusButton.addEventListener('click', function () {
+          const countElement = this.parentElement.querySelector('.count');
+          let current;
+          if (countElement.tagName === 'INPUT') {
+            current = parseInt(countElement.value);
+            countElement.value = current + 1;
+          } else {
+            current = parseInt(countElement.textContent);
+            countElement.textContent = current + 1;
+          }
+          updateGuestText();
+          addChildAge();
+        });
+      });
+
+      // Minus buttons
+      document.querySelectorAll('.minus').forEach(function (minusButton) {
+        minusButton.addEventListener('click', function () {
+          const countElement = this.parentElement.querySelector('.count');
+          let current;
+          let type = countElement.dataset.type;
+
+          if (countElement.tagName === 'INPUT') {
+            current = parseInt(countElement.value);
+            if ((type === 'adult' && current > 1) || (type === 'child' && current > 0)) {
+              countElement.value = current - 1;
+              updateGuestText();
+              if (type === 'child') {
+                addChildAge();
+              }
+            }
+          } else {
+            current = parseInt(countElement.textContent);
+            if ((type === 'adult' && current > 1) || (type === 'child' && current > 0)) {
+              countElement.textContent = current - 1;
+              updateGuestText();
+              if (type === 'child') {
+                addChildAge();
+              }
+            }
+          }
+        });
+      });
+
+      function updateGuestText() {
+        let totalAdults = 0;
+        let totalChildren = 0;
+        let totalRoom = document.querySelectorAll('.room-details').length;
+
+        document.querySelectorAll('.count[data-type="adult"]').forEach(el => {
+          totalAdults += parseInt(el.textContent);
+        });
+
+        document.querySelectorAll('.count[data-type="child"]').forEach(el => {
+          if (el.tagName === 'INPUT') {
+            totalChildren += parseInt(el.value);
+          } else {
+            totalChildren += parseInt(el.textContent);
+          }
+        });
+
+        
+        document.querySelector('.guest-adult-count').textContent = `${totalAdults} ${totalAdults === 1 ? 'Adult' : 'Adults'}`;
+        document.querySelector('.guest-child-count').textContent = `${totalChildren} ${totalChildren === 1 ? 'Child' : 'Children'}`;
+      }
+
+      // Add Room Button
+      const addRoomBtn = document.querySelector('.addRoom');
+      let roomCount = 1;
+      addRoomBtn.addEventListener('click', () => {
+        if (roomCount >= 4) {
+          addRoomBtn.style.display = "none";
+          const maxRooms = document.createElement('div');
+          maxRooms.className = 'maxRooms';
+          maxRooms.innerHTML = `<span>Maximum allowed room is 4. 
+            if you need more you can call us</span>`;
+          const menu = document.querySelector('.guest-dropdown .dropdown-menu');
+          menu.insertBefore(maxRooms, addRoomBtn);
+          return;
+        }
+        roomCount++;
+        const roomDetails = document.createElement('div');
+        roomDetails.className = 'room-details';
+        roomDetails.id = `room-${roomCount}`;
+        roomDetails.innerHTML = `
+          <h4>Room ${roomCount}</h4>
+          <button type="button" class="close-dropdown">Done</button>
+          <button class="remove-room" ><i class="fas fa-times"></i></button>
+          <div class="room-type">
+            <label for="roomType-${roomCount}">Room Type</label>
+            <select id="roomType-${roomCount}">
+              <option>Luxury Cabins</option>
+              <option>Luxury Suits</option>
+              <option>Luxury Royal suits</option>
+            </select>
+          </div>
+          <div class="guest-adult-option">
+            <span>Adults</span>
+            <div class="counter">
+              <button class="minus">-</button>
+              <span class="count" data-type="adult">1</span>
+              <button class="plus">+</button>
+            </div>
+          </div>
+          <div class="guest-child-option">
+            <span>Children</span>
+            <div class="counter">
+              <button class="minus">-</button>
+              <input class="count" type="number" value="0" data-type="child"></input>
+              <button class="plus">+</button>
+            </div>
+          </div>
+          <button type="button" class="close-dropdown">Done</button>`;
+        // Add event listeners to the new child input field
+        const newChildInput = roomDetails.querySelector('.guest-child-option .count');
+        if (newChildInput && newChildInput.tagName === 'INPUT') {
+          newChildInput.addEventListener('change', function () {
+            addChildAge();
+          });
+          newChildInput.addEventListener('input', function () {
+            addChildAge();
+          });
+        }
+
+        const menu = document.querySelector('.guest-dropdown .dropdown-menu');
+        menu.insertBefore(roomDetails, addRoomBtn);
+        // Attach close-dropdown to new buttons
+        roomDetails.querySelectorAll('.close-dropdown').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const dropdownMenu = document.querySelector('.guest-dropdown .dropdown-menu');
+            dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+          });
+        });
+        document.querySelectorAll('.close-dropdown').forEach(function (button) {
+          button.addEventListener('click', function () {
+            const formElement = document.querySelector('.hero-section');
+            if (formElement) {
+              formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        });
+        // Add listeners to new buttons
+        const newPlusButtons = roomDetails.querySelectorAll('.plus');
+        const newMinusButtons = roomDetails.querySelectorAll('.minus');
+
+        newPlusButtons.forEach(function (plusButton) {
+          plusButton.addEventListener('click', function () {
+            const countElement = this.parentElement.querySelector('.count');
+            let current;
+            if (countElement.tagName === 'INPUT') {
+              current = parseInt(countElement.value);
+              countElement.value = current + 1;
+            } else {
+              current = parseInt(countElement.textContent);
+              countElement.textContent = current + 1;
+            }
+            updateGuestText();
+            addChildAge();
+          });
+        });
+
+        newMinusButtons.forEach(function (minusButton) {
+          minusButton.addEventListener('click', function () {
+            const countElement = this.parentElement.querySelector('.count');
+            let current;
+            let type = countElement.dataset.type;
+
+            if (countElement.tagName === 'INPUT') {
+              current = parseInt(countElement.value);
+              if ((type === 'adult' && current > 1) || (type === 'child' && current > 0)) {
+                countElement.value = current - 1;
+                updateGuestText();
+                if (type === 'child') {
+                  addChildAge();
+                }
+              }
+            } else {
+              current = parseInt(countElement.textContent);
+              if ((type === 'adult' && current > 1) || (type === 'child' && current > 0)) {
+                countElement.textContent = current - 1;
+                updateGuestText();
+                if (type === 'child') {
+                  addChildAge();
+                }
+              }
+            }
+          });
+        });
+
+        roomDetails.querySelector('.remove-room').addEventListener('click', function () {
+          roomDetails.remove();
+          renumberRooms();
+          updateGuestText();
+          roomCount--;
+          addRoomBtn.style.display = "block";
+          const message = document.querySelector('.maxRooms');
+          if (message) message.remove();
+        });
+
+        updateGuestText();
+        addChildAge();
+      });
+
+      function addChildAge() {
+        document.querySelectorAll(".guest-child-option").forEach(function (childOption) {
+          const childCount = childOption.querySelector('.count');
+          const childValue = parseInt(childCount.tagName === 'INPUT' ? childCount.value : childCount.textContent);
+
+          // Remove old inputs
+          const existingInputs = childOption.parentNode.querySelectorAll('.child-input');
+          existingInputs.forEach(input => input.remove());
+
+          // Create a fragment to hold all inputs
+          const fragment = document.createDocumentFragment();
+
+          // Build inputs in correct order
+          for (let i = 0; i < childValue; i++) {
+            const inputField = document.createElement("div");
+            inputField.classList.add("child-input", "position-relative", "mt-2");
+            inputField.innerHTML = `
+        <label for="childAge${i + 1}">Child ${i + 1} Age</label>
+        <input type="number" id="childAge${i + 1}" name="child_age[]" min="0" max="17" required />
+      `;
+            fragment.appendChild(inputField);
+          }
+          // Insert after the .guest-child-option element
+          childOption.after(fragment);
+        });
+      }
+
+      // Add event listeners for child count changes
+      document.querySelectorAll('.guest-child-option .count').forEach(function (countElement) {
+        if (countElement.tagName === 'INPUT') {
+          countElement.addEventListener('change', function () {
+            addChildAge();
+          });
+          countElement.addEventListener('input', function () {
+            addChildAge();
+          });
+        }
+      });
+      function renumberRooms() {
+        const rooms = document.querySelectorAll('.room-details');
+        rooms.forEach((room, index) => {
+          const roomNumber = index + 1;
+          const title = room.querySelector('h4');
+          if (title) title.textContent = `Room ${roomNumber}`;
+        });
+      }
+    });
+  </script>
 </body>
 </html>
